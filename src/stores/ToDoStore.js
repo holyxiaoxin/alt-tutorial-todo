@@ -20,7 +20,6 @@ class ToDoStore {
     if (index > -1) {
       this.toDoList.splice(index, 1);
     }
-    console.log(this.toDoList);
   }
 }
 
