@@ -1,5 +1,5 @@
 var React = require('react');
-var ToDo = require('./components/ToDo.jsx');
+var ToDo = require('./components/ToDo.js');
 
 React.render(
   <ToDo />,
