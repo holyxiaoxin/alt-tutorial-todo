@@ -1,14 +1,32 @@
-var alt = require('../alt');
-var ToDoActions = require('../actions/ToDoActions');
+import alt from '../alt';
+import ToDoActions from '../actions/ToDoActions';
+import ToDoSource from '../sources/ToDoSource';
 
 class ToDoStore {
   constructor() {
     this.toDoList = [];
 
     this.bindListeners({
+      handleFetchToDo: ToDoActions.FETCH_TO_DO,
+      handleUpdateToDo: ToDoActions.UPDATE_TO_DO,
+      handleToDoFailed: ToDoActions.TO_DO_FAILED,
       handleRemove: ToDoActions.REMOVE,
       handleAdd: ToDoActions.ADD
     });
+
+    this.exportAsync(ToDoSource);
+  }
+
+  handleUpdateToDo(todo) {
+    this.toDoList = todo;
+  }
+
+  handleToDoFailed(errorMessage) {
+    console.log(errorMessage);
+  }
+
+  handleFetchToDo() {
+    this.toDoList = [];
   }
 
   handleAdd(todo) {

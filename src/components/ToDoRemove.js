@@ -11,7 +11,6 @@ class ToDoRemove extends React.Component {
       <div>
         <form className="form-inline">
           <div className="form-group">
-            <label htmlFor="add">Remove</label>
             <input type="text" className="form-control" id="item-remove" placeholder="item"/>
           </div>
           <button type="submit" className="btn btn-default" onClick={this.handleClick}>Remove</button>

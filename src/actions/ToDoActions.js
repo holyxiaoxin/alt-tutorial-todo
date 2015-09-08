@@ -1,6 +1,18 @@
-var alt = require('../alt');
+import alt from '../alt';
 
 class ToDoActions {
+  fetchToDo() {
+    this.dispatch();
+  }
+
+  updateToDo(todo) {
+    this.dispatch(todo);
+  }
+
+  toDoFailed(errorMessage) {
+    this.dispatch(errorMessage);
+  }
+
   add(item) {
     $('#item-add').val('');
     console.log(item)
@@ -13,4 +25,4 @@ class ToDoActions {
   }
 }
 
-module.exports = alt.createActions(ToDoActions);
+export default alt.createActions(ToDoActions);
