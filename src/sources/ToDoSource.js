@@ -15,7 +15,7 @@ var ToDoSource = {
             } else {
               reject('Things have broken');
             }
-          },1000);
+          },500);
         })
       },
       local() {

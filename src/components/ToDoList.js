@@ -4,26 +4,30 @@ import ToDoStore from '../stores/ToDoStore';
 
 export default class ToDoList extends React.Component{
   shouldComponentUpdate(nextProps, nextState){
+    if (!ToDoStore.isLoading()){
       return ShallowCompare(this, nextProps, nextState);
+    }
+    return true;
   }
   render() {
-    console.log(this.props.toDoList);
     if (ToDoStore.isLoading()) {
-      console.log('todo store is loading');
+      console.log('loading')
       return (
         <div>
-          Fetching from store
+          <img src="ajax-loader.gif"/>
         </div>
       )
     }
     return (
-      <ul>
-        {this.props.toDoList.map((todo, i) => {
-          return (
-            <li key={i}>{todo}</li>
-          );
-        })}
-      </ul>
+      <div>
+        <ul>
+          {this.props.toDoList.map((todo, i) => {
+            return (
+              <li key={i}>{todo}</li>
+            );
+          })}
+        </ul>
+      </div>
     );
   }
 }

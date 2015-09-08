@@ -13,7 +13,7 @@ class ToDoStore {
       handleRemove: ToDoActions.REMOVE,
       handleAdd: ToDoActions.ADD
     });
-    this.registerAsync(ToDoSource);
+    this.exportAsync(ToDoSource);
   }
 
   handleUpdateToDo(todo) {
