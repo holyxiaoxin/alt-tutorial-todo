@@ -9,7 +9,7 @@ cd alt-tutorial-todo
 npm install
 npm start
 ```
->hit http://localhost:3000
+>hit [localhost:3000](http://localhost:3000)!
 
 ## Tools
 This tutorial comprises of a simple todo app bundled with all lots of goodies.
@@ -17,6 +17,7 @@ This also serves as a boilerplate for react-alt development workflow.
 
 - React ^0.13.3
 - Alt Flux
+- Immutable JS
 - Babel, es6
 - Webpack react-hot-loader
 - Dev server
