@@ -4,8 +4,10 @@ var mockData = ['buy milk', 'buy chicken', 'buy cow']
 
 var ToDoSource = {
   fetchToDo() {
+    console.log('source: fetchtodo');
     return {
       remote() {
+        console.log('source: remote');
         return new Promise((resolve, reject)=>{
           setTimeout(()=>{
             if (true) {

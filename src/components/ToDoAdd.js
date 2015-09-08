@@ -1,10 +1,14 @@
-import React from 'react';
+import React from 'react/addons';
+const ShallowCompare = React.addons.shallowCompare;
 import ToDoActions from '../actions/ToDoActions'
 
 class ToDoAdd extends React.Component {
   handleClick(e) {
     e.preventDefault();
     ToDoActions.add($('#item-add').val());
+  }
+  shouldComponentUpdate(nextProps, nextState){
+    return ShallowCompare(this, nextProps, nextState);
   }
   render() {
     return(
@@ -13,7 +17,7 @@ class ToDoAdd extends React.Component {
           <div className="form-group">
             <input type="text" className="form-control" id="item-add" placeholder="item"/>
           </div>
-          <button type="submit" className="btn btn-default" onClick={this.handleClick}>Add</button>
+          <button className="btn btn-default" onClick={this.handleClick}>Add</button>
         </form>
       </div>
     );
